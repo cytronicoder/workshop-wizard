@@ -17,10 +17,10 @@ function App() {
     }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/api/generate", {
+      const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userIdea: idea }),
+        body: JSON.stringify({ userIdea }),
       });
       const data = await res.json();
       if (data.result) {
