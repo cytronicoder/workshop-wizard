@@ -3,17 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.markdown-preview pre {
-  border-radius: 0.375rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #1f1f1f;
-  color: #fff;
-  overflow-x: auto;
-  white-space: pre-wrap;
-}
-
-.markdown-preview code {
-  white-space: pre-wrap;
-}
