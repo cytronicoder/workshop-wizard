@@ -125,7 +125,6 @@ function App() {
           </p>
           <p className="app-subtitle">
             Anyways, here're some tips on how to use this tool on the right.
-            Good luck!
           </p>
         </div>
         <div className="app-tips">
@@ -236,7 +235,7 @@ function App() {
           ) : (
             <div className="editor-container">
               <Editor
-                height="400px"
+                height="1000px"
                 defaultLanguage="markdown"
                 value={workshop}
                 onChange={(value) => setWorkshop(value)}
