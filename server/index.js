@@ -1,15 +1,22 @@
-const fetch = require('node-fetch');
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+// for node versions prior to 18 you might need a fetch polyfill
+// const fetch = require('node-fetch');
+
 require('dotenv').config();
 
-module.exports = async (req, res) => {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
+const app = express();
+const port = process.env.PORT || 3001;
 
+app.use(cors());
+app.use(bodyParser.json());
+
+app.post('/api/generate', async (req, res) => {
     const { userIdea } = req.body;
-
     if (!userIdea || !userIdea.trim()) {
-        return res.status(400).json({ error: 'No workshop idea provided.' });
+        return res.status(400).json({ error: "No workshop idea provided." });
     }
 
     const prompt = `You're a senior Hack Club workshop author with a knack for explaining things clearly and making learning fun. Your job is to write a **complete, beginner-friendly coding workshop** based on the following idea:
@@ -172,21 +179,22 @@ module.exports = async (req, res) => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                messages: [{ role: 'user', content: prompt }],
-            }),
+                messages: [{ role: 'user', content: prompt }]
+            })
         });
-
         const data = await response.json();
 
         if (data.choices && data.choices[0].message.content) {
-            return res.status(200).json({ result: data.choices[0].message.content });
+            generatedWorkshop = data.choices[0].message.content;
+            // console.log("Generated workshop:", generatedWorkshop);
+            return res.json({ result: generatedWorkshop });
         } else {
-            return res.status(500).json({ error: 'Unexpected response format.' });
+            return res.status(500).json({ error: "Unexpected response format." });
         }
-    } catch (err) {
-        console.error(err);
-        return res.status(500).json({ error: 'Internal Server Error' });
+    } catch (error) {
+        console.error("Error generating workshop:", error);
+        return res.status(500).json({ error: "Failed to generate workshop." });
     }
-};
+});
 
-module.exports = app;
+app.listen(port, () => console.log(`Server listening on port ${port}`));
