@@ -1,0 +1,105 @@
+.app-container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: var(--spacing-4);
+  text-align: left;
+}
+
+.app-title {
+  margin-bottom: var(--spacing-4);
+}
+
+.app-subtitle {
+  margin-bottom: var(--spacing-5);
+}
+
+.section {
+  margin-bottom: var(--spacing-5);
+}
+
+.section-label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-3);
+  font-weight: var(--font-weight-bold);
+}
+
+.input-textarea {
+  width: 100%;
+  padding: var(--spacing-3);
+  font-size: var(--font-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radii-default);
+}
+
+.button-custom {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-2);
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radii-default);
+  cursor: pointer;
+  margin-right: var(--spacing-3);
+  transition: transform 0.125s ease-in-out;
+}
+
+.button-custom:hover {
+  transform: scale(1.05);
+}
+
+.button-custom:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-custom {
+  background: var(--elevated);
+  color: var(--text);
+  border-radius: var(--radii-extra);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-4);
+  margin: var(--spacing-5) 0;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--spacing-4);
+}
+
+.tab-button {
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--sunken);
+  color: var(--text);
+  border: none;
+  border-top-left-radius: var(--radii-default);
+  border-top-right-radius: var(--radii-default);
+  cursor: pointer;
+  margin-right: var(--spacing-2);
+}
+
+.tab-button.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.code-block {
+  background: var(--dark);
+  color: var(--white);
+  padding: var(--spacing-3);
+  border-radius: var(--radii-default);
+  margin: var(--spacing-4) 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.inline-code {
+  background: var(--sunken);
+  padding: 0.25em 0.5em;
+  border-radius: var(--radii-small);
+}
+
+.editor-container {
+  height: 400px;
+}
