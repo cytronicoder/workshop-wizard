@@ -104,7 +104,7 @@ function App() {
     <div className="app-container">
       <div className="app-header">
         <div className="app-description">
-          <h1 className="app-title">Workshop Designer</h1>
+          <h1 className="app-title">Workshop Wizard</h1>
           <p className="app-subtitle">
             Describe your workshop idea and let the AI do the rest.
           </p>
