@@ -1,4 +1,4 @@
-# Workshop Wizard
+# Workshop Wizard 🪄
 
 Workshop Wizard is a tool that can help you generate complete, beginner-friendly coding workshops using AI. I built this project to make it easy for anyone—especially those with little to no coding experience—to turn their creative ideas into detailed, step-by-step guides.
 
