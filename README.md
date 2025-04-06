@@ -49,7 +49,7 @@ The server will listen on the port specified in the environment variable (defaul
 Then, in the client directory, start the React application:
 
 ```bash
-pnpm start
+pnpm dev
 ```
 
 This will open the application in your default web browser. You can then input a workshop idea or click "Surprise Me!" to generate a random prompt. The generated workshop will be displayed in both preview and editor tabs.
